@@ -5,11 +5,12 @@ interface Props {
   name: string;
   price: number;
   image: string;
+  orderClick: React.MouseEventHandler;
 }
 
-const OrderFood: React.FC<Props> = ({name, price, image}) => {
+const OrderFood: React.FC<Props> = ({name, price, image, orderClick}) => {
   return (
-    <div className='orderBtn'>
+    <div className='orderBtn' onClick={orderClick}>
       <img src={image} alt='food, drinks'/>
       <div>
         <h3>{name}</h3>
